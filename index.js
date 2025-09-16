@@ -7,7 +7,12 @@ app.post('/api/delete', (req, res) => {
   res.status(200).json({ message: 'Successfully deleted' });
 });
 
-const port = process.env.PORT || 3001; // Changed to 3001
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Delete API is running!' });
+});
+
+const port = process.env.PORT || 3000; // Changed to 3001
 const server = app.listen(port, () => console.log(`Delete API running on port ${port}`));
 
 server.on('error', (error) => {
